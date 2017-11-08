@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-LIB = -L./libft -lft
+LIB = -L./libft -lft -L./libft/ft_printf -lftprintf
 MAKE = make
 NAME1 = corewar
 NAME2 = asm

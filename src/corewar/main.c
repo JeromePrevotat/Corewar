@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:47:58 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 18:56:10 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/08 19:38:56 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 		return (ERROR);
 	if (init_vm(vm_mem) == ERROR)
 		error();
+	print_vm_mem(vm_mem);
 	free_vm_mem(vm_mem);
 	return (0);
 }

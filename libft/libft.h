@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jprevota <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 12:05:32 by jprevota          #+#    #+#             */
-/*   Updated: 2016/11/26 17:07:55 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/08 19:30:56 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include "./get_next_line.h"
+# include "./ft_printf/inc/ft_printf.h"
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
