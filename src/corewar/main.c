@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:47:58 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 19:38:56 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/08 19:49:39 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 
 	(void)argc;
 	(void)argv;
+	if (check_reg_attributes() == ERROR)
+		error();
 	if (!((vm_mem) = (unsigned char **)malloc(REG_NUMBER *
 		sizeof(unsigned char *))))
 		return (ERROR);

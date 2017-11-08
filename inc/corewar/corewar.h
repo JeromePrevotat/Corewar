@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:40:38 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 19:21:32 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/08 19:56:03 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 
 # define REG_SIZE 32
 # define REG_NUMBER 32
+# define CYCLE_TO_DIE 1536
+# define CYCLE_DELTA 4
+# define NBR_LIVE 2048
 
 /*
 ** Main.c
@@ -39,5 +42,10 @@ void	error(void);
 ** Free_ressources.c
 */
 void	free_vm_mem(unsigned char **vm_mem);
+
+/*
+** Error_handler.c
+*/
+int		check_reg_attributes(void);
 
 #endif

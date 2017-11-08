@@ -7,6 +7,7 @@ NAME2 = asm
 
 SRCS1 += ./src/corewar/main.c
 SRCS1 += ./src/corewar/utils.c
+SRCS1 += ./src/corewar/error_handler.c
 SRCS1 += ./src/corewar/free_ressources.c
 
 SRCS2 += ./src/asm/main.c
@@ -33,6 +34,8 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME1) $(NAME2)
+	rm -rf $(NAME1).dSYM
+	rm -rf $(NAME2).dSYM
 	cd ./libft && $(MAKE) fclean
 
 re:	fclean all
