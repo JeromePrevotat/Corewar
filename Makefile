@@ -2,12 +2,14 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LIB = -L./libft -lft
 MAKE = make
-NAME1 = checker
-NAME2 = push_swap
+NAME1 = corewar
+NAME2 = asm
 
-SRCS1 += ./src/checker.c
+SRCS1 += ./src/corewar/main.c
+SRCS1 += ./src/corewar/utils.c
+SRCS1 += ./src/corewar/free_ressources.c
 
-SRCS2 += ./src/push_swap.c
+SRCS2 += ./src/asm/main.c
 
 INC1 += ./inc/corewar/corewar.h
 INC2 += ./inc/asm/asm.h

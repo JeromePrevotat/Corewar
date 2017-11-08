@@ -6,13 +6,15 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:56:08 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 16:56:43 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/08 18:00:55 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/asm/asm.h"
+#include "../../inc/asm/asm.h"
 
 int	main(int argc, char **argv)
 {
+	(void)argc;
+	(void)argv;
 	return (0);
 }
