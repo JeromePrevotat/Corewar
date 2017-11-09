@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:47:58 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/09 11:22:05 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/09 20:42:38 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,48 @@
 
 int	main(int argc, char **argv)
 {
-	unsigned char **vm_mem;
+	unsigned char	**vm_mem;
+	unsigned int	nbr_cycle;
+	void			*pc;
 
-
-	(void)argc;
 	(void)argv;
+	if (argc < 3 || ft_atoi(argv[1]) < 1)
+		error();
+	pc = NULL;
 	if (check_reg_attributes() == ERROR)
 		error();
-	if (!((vm_mem) = (unsigned char **)malloc(REG_NUMBER *
+	if (!(vm_mem = (unsigned char **)malloc(REG_NUMBER *
 		sizeof(unsigned char *))))
 		return (ERROR);
 	if (init_vm(vm_mem) == ERROR)
 		error();
+	nbr_cycle = 0;
 	vm_mem[0][0] = 'J';
 	vm_mem[0][1] = 'e';
 	vm_mem[0][2] = 'E';
 	vm_mem[0][3] = 'e';
 	vm_mem[0][4] = 'J';
-	vm_mem[0][5] = 1;
-	vm_mem[1][6] = 15;
-	vm_mem[2][7] = 16;
+
+	vm_mem[1][5] = 'Y';
+	vm_mem[1][6] = 'O';
+	vm_mem[1][7] = 'L';
+	vm_mem[1][8] = 'O';
+	vm_mem[1][9] = '!';
+
+	while (nbr_cycle != (unsigned int)ft_atoi(argv[1]))
+	{
+		//exec();
+		ft_printf("Cycle : %d\n", nbr_cycle);
+		nbr_cycle++;
+	}
+	ft_printf("\nVM_MEM : ");
 	print_vm_mem(vm_mem);
+
+	/*
+	** Register that contains the adress of next instruction in vm_mem
+	*/
+	pc = &vm_mem[0][0];
+	ft_printf("\nPC : %p\n", pc);
 	free_vm_mem(vm_mem);
 	return (0);
 }

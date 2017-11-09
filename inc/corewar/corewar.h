@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:40:38 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 19:56:03 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/09 18:18:05 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 # define CYCLE_TO_DIE 1536
 # define CYCLE_DELTA 4
 # define NBR_LIVE 2048
+
+typedef struct	s_player
+{
+	int			num;
+	char		*name;
+}				t_player;
 
 /*
 ** Main.c

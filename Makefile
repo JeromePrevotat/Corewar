@@ -6,12 +6,12 @@
 #    By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 20:35:45 by jprevota          #+#    #+#              #
-#    Updated: 2017/11/08 21:07:36 by jprevota         ###   ########.fr        #
+#    Updated: 2017/11/09 18:34:13 by jprevota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-RED = \x1b[31m
 GREY = \x1b[30m
+RED = \x1b[31m
 GREEN = \x1b[32m
 YELLOW = \x1b[33m
 BLUE = \x1b[34m
@@ -41,6 +41,8 @@ OBJ2 = $(SRCS2:.c=.o)
 
 all: $(NAME1) $(NAME2)
 
+# Corewar Syntax
+# ./corewar [-dump nbr_cycle] [[-n number] prog_name]
 $(NAME1): libft $(OBJ1) $(INC1)
 	@echo "$(BLUE)>>$(WHITE) Building $(NAME1) $(BLUE)<<$(WHITE)"
 	@$(CC) $(CFLAGS) $(LIB) -g $(SRCS1) -o $@
