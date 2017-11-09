@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:34:49 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/08 19:38:13 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/09 11:22:29 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ int		ft_hexdump(void *mem, int printed)
 	tmp = (unsigned char *)mem;
 	while (i < REG_SIZE)
 	{
-		if (printed == 32)
+		if (printed == REG_SIZE * 2 || printed == 0)
 		{
 			ft_printf("\n");
 			printed = 0;
 		}
 		if (printed % 2 == 0 && printed != 0)
 			ft_printf(" ");
+		if (*(tmp + i) < 0x10)
+			printed += ft_printf("0");
 		printed += ft_printf("%X", *(tmp + i));
 		i++;
 	}
@@ -45,6 +47,7 @@ void	print_vm_mem(unsigned char **vm_mem)
 		error();
 	while (i < REG_NUMBER)
 	{
+		ft_printf(GREEN"\n\nREGISTRE %d : "RESET, i);
 		printed = ft_hexdump(vm_mem[i], printed);
 		i++;
 	}
