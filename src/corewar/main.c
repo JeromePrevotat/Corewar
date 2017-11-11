@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:47:58 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/11 15:23:39 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/11 15:28:48 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int		main(int argc, char **argv)
 	if (!(vm = (t_vm *)malloc(1 * sizeof(t_vm))))
 		error(-2);
 	init_vm(&vm, argc, argv);
+	vm->mem[0] = 'J';
+	vm->mem[1] = 'e';
+	vm->mem[2] = 'E';
+	vm->mem[3] = 'e';
+	vm->mem[4] = 'J';
+	vm->mem[32] = 1;
 	ft_hexdump(vm->mem, vm->size, 32);
 	free_vm(vm);
 	return (0);

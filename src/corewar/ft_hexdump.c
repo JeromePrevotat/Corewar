@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 15:12:25 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/11 15:23:50 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/11 15:29:44 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_hexdump(void *mem, size_t size, int bpl)
 	{
 		if (printed % 2 == 0)
 			ft_printf(" ");
-		if (printed % bpl == 0)
+		if (i % bpl == 0)
 			ft_printf("\n");
 		printed += ft_printf("%.2X", *(tmp + i));
 		i++;
