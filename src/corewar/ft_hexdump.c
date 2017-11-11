@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_ressources.c                                  :+:      :+:    :+:   */
+/*   ft_hexdump.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 18:03:27 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/11 15:19:00 by jprevota         ###   ########.fr       */
+/*   Created: 2017/11/11 15:12:25 by jprevota          #+#    #+#             */
+/*   Updated: 2017/11/11 15:23:50 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/corewar/corewar.h"
 
-void	free_split(char **split)
+int	ft_hexdump(void *mem, size_t size, int bpl)
 {
-	int	i;
+	unsigned char	*tmp;
+	int				printed;
+	size_t			i;
 
+	tmp = (unsigned char *)mem;
+	printed = 0;
 	i = 0;
-	if (split != NULL)
+	while (i < size)
 	{
-		while (split[i] != NULL)
-		{
-			free(split[i]);
-			split[i] = NULL;
-			i++;
-		}
-		free(split);
-		split = NULL;
+		if (printed % 2 == 0)
+			ft_printf(" ");
+		if (printed % bpl == 0)
+			ft_printf("\n");
+		printed += ft_printf("%.2X", *(tmp + i));
+		i++;
 	}
-}
-
-void	free_vm(t_vm *vm)
-{
-	if (vm != NULL)
-	{
-		if (vm->mem != NULL)
-		{
-			free(vm->mem);
-			vm->mem = NULL;
-		}
-		free(vm);
-		vm = NULL;
-	}
+	return (printed);
 }

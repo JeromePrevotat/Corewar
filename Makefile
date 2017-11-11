@@ -6,7 +6,7 @@
 #    By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 20:35:45 by jprevota          #+#    #+#              #
-#    Updated: 2017/11/11 14:53:25 by jprevota         ###   ########.fr        #
+#    Updated: 2017/11/11 15:17:11 by jprevota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS1 += ./src/corewar/utils.c
 SRCS1 += ./src/corewar/error_handler.c
 SRCS1 += ./src/corewar/free_ressources.c
 SRCS1 += ./src/corewar/ft_str_isdigit.c
+SRCS1 += ./src/corewar/ft_hexdump.c
 
 SRCS2 += ./src/asm/main.c
 
