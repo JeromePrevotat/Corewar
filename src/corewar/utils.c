@@ -6,53 +6,32 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:34:49 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/09 20:41:34 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/11 14:44:10 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/corewar/corewar.h"
 
-int		ft_hexdump(void *mem, int printed)
+void	error(int err_num)
 {
-	unsigned char	*tmp;
-	int				i;
+	char	*str_error;
 
-	i = 0;
-	tmp = (unsigned char *)mem;
-	while (i < REG_SIZE)
-	{
-		if (printed == 64 || printed == 0)
-		{
-			ft_printf("\n");
-			printed = 0;
-		}
-		if (printed % 2 == 0 && printed != 0)
-			ft_printf(" ");
-		printed += ft_printf("%.2X", *(tmp + i));
-		i++;
-	}
-	return (printed);
+	ft_putstr_fd("Error :\n", 2);
+	str_error = get_str_error(err_num);
+	ft_putstr_fd(str_error, 2);
+	exit(0);
 }
 
-void	print_vm_mem(unsigned char **vm_mem)
+int		is_cor(char *file)
 {
 	int	i;
-	int	printed;
 
 	i = 0;
-	printed = 0;
-	if (vm_mem == NULL)
-		error();
-	while (i < REG_NUMBER)
-	{
-		//ft_printf(GREEN"\n\nREGISTRE %d : "RESET, i);
-		printed = ft_hexdump(vm_mem[i], printed);
+	while (file[i] != '\0')
 		i++;
-	}
-}
-
-void	error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(0);
+	if (i < 5)
+		return (FALSE);
+	if (ft_strcmp(file + i - 4, ".cor") != 0)
+		return (FALSE);
+	return (TRUE);
 }

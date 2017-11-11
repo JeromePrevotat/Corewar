@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:40:38 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/09 18:18:05 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/11 14:53:57 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,36 @@
 # define CYCLE_DELTA 4
 # define NBR_LIVE 2048
 
-typedef struct	s_player
-{
-	int			num;
-	char		*name;
-}				t_player;
-
 /*
 ** Main.c
 */
-int		init_vm(unsigned char **vm_mem);
+
+/*
+** Check_arg.c
+*/
+void	check_vm_arg(int argc, char **argv);
+void	check_champ_arg(int argc, char **argv);
+void	check_champ_split(char **split);
 
 /*
 ** Utils.c
 */
-int		ft_hexdump(void *mem, int printed);
-void	print_vm_mem(unsigned char **vm_mem);
-void	error(void);
+void	error(int err_num);
+int		is_cor(char *file);
+
+/*
+** Ft_str_isdigit.c
+*/
+int		ft_str_isdigit(char *str);
 
 /*
 ** Free_ressources.c
 */
-void	free_vm_mem(unsigned char **vm_mem);
+void	free_split(char **split);
 
 /*
 ** Error_handler.c
 */
-int		check_reg_attributes(void);
+char	*get_str_error(int err_num);
 
 #endif
