@@ -6,7 +6,7 @@
 #    By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 20:35:45 by jprevota          #+#    #+#              #
-#    Updated: 2017/11/11 15:17:11 by jprevota         ###   ########.fr        #
+#    Updated: 2017/11/12 19:05:01 by jprevota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,9 @@ SRCS1 += ./src/corewar/ft_str_isdigit.c
 SRCS1 += ./src/corewar/ft_hexdump.c
 
 SRCS2 += ./src/asm/main.c
+SRCS2 += ./src/asm/check_arg.c
+SRCS2 += ./src/asm/utils.c
+SRCS2 += ./src/asm/error_handler.c
 
 INC1 += ./inc/corewar/corewar.h
 INC2 += ./inc/asm/asm.h
@@ -67,6 +70,7 @@ fclean: clean
 	rm -rf $(NAME1) $(NAME2)
 	rm -rf $(NAME1).dSYM
 	rm -rf $(NAME2).dSYM
+	rm -rf champ.cor
 
 re:	fclean all
 
