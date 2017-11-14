@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:56:08 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/14 17:39:55 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 19:04:22 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	compile_champ(char *s_name, char *bytecode)
 {
 	char	*c_name;
 
-	bytecode = "YOLO";
 	if ((c_name = get_c_name(s_name)) == NULL)
 		error(-2);
 	compile(c_name, bytecode);

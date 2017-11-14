@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:41:29 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/14 17:28:47 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 18:52:37 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ void	compile(char *name, char *bytecode);
 char	*asm_to_bytecode(int fd);
 int		get_line_type(char *line);
 char	*process_line(char *line, int type);
+
+/*
+** Process_instruction.c
+*/
+char	*process_instruction(char *line, int type);
 
 /*
 ** Check_arg.c

@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:00:57 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/14 17:35:41 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 19:06:39 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,24 @@ int		is_instruction(char *line)
 	int		i;
 
 	i = 0;
-	if ((instructions = get_instructions_list()) == NULL)
+	if ((instructions = get_instructions_list()) == NULL
+		|| (split = ft_strsplit(line, ' ')) == NULL)
 		error(-2);
-	split = ft_strsplit(line, ' ');
-	if (split == NULL)
-	{
-		free(instructions);
-		return (FALSE);
-	}
-	if (split[0] == NULL)
-	{
-		free_split(split);
-		free(instructions);
-		return (FALSE);
-	}
+	else if (split[0] == NULL)
+		return (ERROR);
 	while (i < 16)
 	{
 		if (ft_strcmp(split[0], instructions[i]) == 0)
 		{
 			free(instructions);
 			free_split(split);
-			return (TRUE);
+			return (i);
 		}
 		i++;
 	}
 	free(instructions);
 	free_split(split);
-	return (FALSE);
+	return (ERROR);
 }
 
 char	**get_instructions_list(void)

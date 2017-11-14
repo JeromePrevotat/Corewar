@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 16:47:03 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/14 17:30:39 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 18:52:21 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		get_line_type(char *line)
 
 	type = -1;
 	if (line[0] == ';' || line[0] == '\0')
-		type = 0;
+		type = 16;
 	if (is_instruction(line) == TRUE)
 		type = 1;
 	return (type);
@@ -47,9 +47,9 @@ char	*process_line(char *line, int type)
 {
 	if (type == ERROR)
 		error(7);
-	if (type == 0)
+	if (type == 16)
 		return ("COM");
-	if (type == 1)
-		return (line);
+	if (type >= 0 && type <= 15)
+		return (process_instruction(line, type));
 	return ("");
 }
