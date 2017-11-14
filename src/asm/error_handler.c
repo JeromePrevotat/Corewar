@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:02:57 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/12 18:45:54 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 16:57:43 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ char	*get_str_error(int err_num)
 		return ("Error at the creation of .cor file.\n");
 	if (err_num == 6)
 		return ("Writing error in .cor file.\n");
+	if (err_num == 7)
+		return ("Incorrect asm instruction.\n");
 	return ("Unknow error.\n");
 }

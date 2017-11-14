@@ -6,7 +6,7 @@
 #    By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 20:35:45 by jprevota          #+#    #+#              #
-#    Updated: 2017/11/12 19:05:01 by jprevota         ###   ########.fr        #
+#    Updated: 2017/11/14 17:29:12 by jprevota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ SRCS1 += ./src/corewar/ft_hexdump.c
 
 SRCS2 += ./src/asm/main.c
 SRCS2 += ./src/asm/check_arg.c
+SRCS2 += ./src/asm/asm_to_bytecode.c
 SRCS2 += ./src/asm/utils.c
+SRCS2 += ./src/asm/free_ressources.c
 SRCS2 += ./src/asm/error_handler.c
 
 INC1 += ./inc/corewar/corewar.h

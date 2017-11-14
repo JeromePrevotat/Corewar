@@ -6,7 +6,7 @@
 /*   By: jprevota <jprevota@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:56:08 by jprevota          #+#    #+#             */
-/*   Updated: 2017/11/12 19:03:51 by jprevota         ###   ########.fr       */
+/*   Updated: 2017/11/14 17:39:55 by jprevota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*open_champ(char *file)
 	bytecode = NULL;
 	if ((fd = open(file, O_RDONLY)) == ERROR)
 		error(2);
-
+	bytecode = asm_to_bytecode(fd);
 	if (close(fd) == ERROR)
 		error(3);
 	return (bytecode);
@@ -43,7 +43,8 @@ void	compile_champ(char *s_name, char *bytecode)
 	char	*c_name;
 
 	bytecode = "YOLO";
-	c_name = get_c_name(s_name);
+	if ((c_name = get_c_name(s_name)) == NULL)
+		error(-2);
 	compile(c_name, bytecode);
 	if (c_name != NULL)
 	{
